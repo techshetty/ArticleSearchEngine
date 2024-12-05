@@ -7,6 +7,19 @@ const getfreq=(key,para)=>{
     const wl=para.split(" ")
     return wl.filter(x=>x==key).length;
     }
+    const sortList=(lst)=>{
+        var n=lst.length
+        for(var i=0;i<n;i++){
+            for(var j=i+1;j<n;j++){
+                if(lst[i].keyfreq<lst[j].keyfreq){
+                    var t=lst[i]
+                    lst[i]=lst[j]
+                    lst[j]=t
+                }
+            }
+        }
+        return lst
+    }
 app.get('/',(req,res)=>{
     res.send("Article API is running")
 })
@@ -41,7 +54,7 @@ app.get('/viewarticles',(req,res)=>{
                     const f1=getfreq(text,art.text)
                     if(f1) t.push({"book": art,"keyfreq": f1})
                 }
-                return res.status(200).json({"articles: ": t})
+                return res.status(200).json({"articles: ": sortList(t)})
             }
             return res.status(404).json({"message: ": "failed"})
             })
