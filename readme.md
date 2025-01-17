@@ -6,7 +6,7 @@ This project is a simple Express.js API for managing and searching articles. The
 
 - Add articles with a unique ID, title, and text.
 - Retrieve all articles.
-- Search for articles by title or keyword.
+- Search for articles by title or keyword and sorts them based on keyword frequency.
 - Get details of a specific article by its ID.
 
 ## Installation
