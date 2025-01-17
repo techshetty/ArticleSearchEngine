@@ -18,7 +18,7 @@ This project is a simple Express.js API for managing and searching articles. The
    ```
 3. Start the server:
    ```bash
-   node app.js
+   node index.js
    ```
 
 The server will run on `http://localhost:3000`.
